@@ -4,6 +4,7 @@ from mcp_demo.config.settings import SERVER_NAME, SERVER_VERSION
 from mcp_demo.tools.math import register_math_tools
 from mcp_demo.tools.http import register_http_tools
 from mcp_demo.tools.finance import register_finance_tools
+from mcp_demo.tools.web import register_web_tools
 from mcp_demo.resources.greetings import register_greeting_resources
 
 logging.basicConfig(
@@ -22,6 +23,8 @@ def create_server() -> FastMCP:
         register_http_tools(mcp)
         logging.info("Registering finance tools...")
         register_finance_tools(mcp)
+        logging.info("Registering web tools...")
+        register_web_tools(mcp)
         logging.info("Registering greeting resources...")
         register_greeting_resources(mcp)
         logging.info("All tools/resources registered successfully.")
